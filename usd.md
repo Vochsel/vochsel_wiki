@@ -45,8 +45,10 @@ for prim in stage.Traverse():
 | set position | `UsdGeom.XformCommonAPI(xform).SetTranslate(Gf.Vec3d(x, y, z), timecode)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xform_common_a_p_i.html#a4c66e62616adfdaba258e8dfdec1a630) |  |
 | set rotation *(euler)* | `UsdGeom.XformCommonAPI(xform).SetRotate(Gf.Vec3d(x, y, z), timecode)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xform_common_a_p_i.html#aa1cfa6eb3f9ccf760536e7bf14b60462) | Degrees |
 | set rotation *(quaternion)* | `UsdGeom.XformCommonAPI(xform).SetRotate(Gf.Rotation(Gf.Vec3d(x, y, z), w), timecode)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xform_common_a_p_i.html#aa1cfa6eb3f9ccf760536e7bf14b60462) |  |
-| get transform | `UsdGeom.XformCommonAPI(xform).GetXformVectors(timecode)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xform_common_a_p_i.html#a9901c2a6ffcdc8c4e7aa4ec07d5efa00) | Returns tuple of (translation, rotation, scale, pivot, rotationOrder) |
+| get transform *(local)* | `UsdGeom.XformCommonAPI(xform).GetXformVectors(timecode)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xform_common_a_p_i.html#a9901c2a6ffcdc8c4e7aa4ec07d5efa00) | Returns tuple of (translation, rotation, scale, pivot, rotationOrder) |
+| get transform *(world)* | `mat4 = UsdGeom.XformCache(timecode).GetLocalToWorldTransform(prim)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xformable.html#a2aa0db10d36cae3d325e930765e54d94) | Returns matrix 4x4 |
 | set transform | `xform.AddTransformOp().Set(transform_matrix)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xform_common_a_p_i.html#a9901c2a6ffcdc8c4e7aa4ec07d5efa00) | Returns tuple of (translation, rotation, scale, pivot, rotationOrder) |
+
 
 ## Gf
 
@@ -55,6 +57,9 @@ for prim in stage.Traverse():
 | define matrix4 | `mat4 = Gf.Matrix4d(2)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_stage.html#a6151ae804f7145e451d9aafdde347730) | Creates identity matrix |
 | define translate matrix4 | `mat4 = Gf.Matrix4d(2).SetTranslate(Gf.Vec3d(x, y, z))` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_stage.html#a6151ae804f7145e451d9aafdde347730) | Creates translate matrix |
 | define per element matrix4 | `mat4 = Gf.Matrix4d(2).SetTranslate(1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_stage.html#a6151ae804f7145e451d9aafdde347730) | Creates translate matrix |
+| get translation | `mat4.ExtractTranslation()` | [docs](https://graphics.pixar.com/usd/docs/api/class_gf_matrix4d.html#a690166f9a9d958ff6c3bc008ebcdeea0) | Get vec3 translation |
+| get rotation | `mat4.ExtractRotation()` | [docs](https://graphics.pixar.com/usd/docs/api/class_gf_matrix4d.html#a1fb1e160ed4428d1c94f17180c83b3b7) | Get rotation |
+| get scale | `scale = (mat4.GetRow3(0).GetLength(), mat4.GetRow3(1).GetLength(), mat4.GetRow3(2).GetLength())` | | Get all axis scale |
 
 
 ## Lights
