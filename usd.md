@@ -18,6 +18,14 @@ I've been using Pixar's USD in a CG pipeline for over a year now. Here's some he
 | save as | `stage.Export( "/path/to/output.usda" )` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_stage.html#a0185cf581fbcceba34d567c6bc73d351)
 | print | `print( stage.ExportToString() )` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_stage.html#a0cc2dc5d689d2b28e7821db0fb4f4903)
 
+### Traversal
+
+To traverse recursively through every prim:
+```python
+for prim in stage.Traverse():
+    print(prim)
+```
+
 ## Prims
 
 |  | Code | Docs | Tips |
@@ -25,6 +33,8 @@ I've been using Pixar's USD in a CG pipeline for over a year now. Here's some he
 | define | `stage.DefinePrim("/primpath")` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_stage.html#a6151ae804f7145e451d9aafdde347730) | Gets or creates prim at primpath. To transform, prim must be an xform (or sub type) |
 | exists | `stage.GetPrimAtPath("/primpath")` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_stage.html#a6151ae804f7145e451d9aafdde347730) | Return prim object. Can be invalid (Check with IsValid) |
 | valid | `prim.IsValid()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#afa8720abaf6972d6dac22a8cd1a67225) | False if not valid (Doesn't exist) |
+| attribute | `prim.GetAttribute('attribName')` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_prim.html#a04dca40bb61be7b3779b1eb38002bca2) | Use `.Get()` and `.Set(val)` |
+| type *string* | `prim.GetTypeName()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_prim.html#a2e20db2f92fe5f6687b5c7f919277257) |  |
 
 ## Xformables
 
@@ -54,3 +64,7 @@ I've been using Pixar's USD in a CG pipeline for over a year now. Here's some he
 | define light | `light_prim = stage.DefinePrim("/primpath", "DomeLight")` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_lux_dome_light.html) | This will return a prim object, no light methods attached |
 | access light | `light = UsdLux.DomeLight(light_prim)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_lux_dome_light.html) |  |
 | set dome texture | `dome_light.CreateTextureFileAttr().Set("/path/to/texture.exr")` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_lux_dome_light.html#a5e1d4f7d42a3bb4957388b2762675aca) |  |
+
+
+## Tips
+ * Most API functions are CamelCase.
