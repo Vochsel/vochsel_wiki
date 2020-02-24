@@ -38,6 +38,8 @@ for prim in stage.Traverse():
 
 ## Xformables
 
+`from pxr import UsdGeom`
+
 |  | Code | Docs | Tips |
 |:-- | -- | -- | -- |
 | define xform | `xform = stage.DefinePrim("/primpath", "Xform")` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_stage.html#a6151ae804f7145e451d9aafdde347730) | Gets or creates an xform prim at primpath. **To transform a prim, it must be an Xform or child type** |
@@ -51,6 +53,9 @@ for prim in stage.Traverse():
 
 
 ## Gf
+*Graphics Foundations*
+
+`from pxr import Gf`
 
 |  | Code | Docs | Tips |
 |:-- | -- | -- | -- |
@@ -63,6 +68,8 @@ for prim in stage.Traverse():
 
 
 ## Lights
+
+`from pxr import UsdLux`
 
 |  | Code | Docs | Tips |
 |:-- | -- | -- | -- |
