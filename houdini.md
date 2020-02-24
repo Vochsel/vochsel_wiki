@@ -1,6 +1,12 @@
 # Houdini Wiki
 Here are a mix of Python and Vex snippets that have served me well.
 
+## HDAs/OTLs
+
+### Internal Callback Function
+When writing HDAs you can put your python code under Scripts tab, and then create a `Python Module` event handler.
+To call this function from a parameter callback script you can use `hou.pwd().hm().function_name(kwargs, hou.pwd())`. `hou.pwd().hm()` effectively becomes your module.
+
 ## LOPS
 
 ### LOP Lights -> Mantra/OBJ Lights
