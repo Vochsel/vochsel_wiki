@@ -1,6 +1,13 @@
 # USD Wiki
 I've been using Pixar's USD in a CG pipeline for over a year now. Here's some helpful things I've noted.
 
+### C++/Python
+Most of these are following are python snippets. The function interface is mostly the same with the C++ API with some noticeable language differences: 
+
+ * Wrap values with `pxr::VtValue(10.0f)`
+ * Paths with `pxr::SdfPath("/path")`
+
+
 ## Stage 
 
 ### Creation
