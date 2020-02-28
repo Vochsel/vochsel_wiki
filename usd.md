@@ -67,19 +67,21 @@ for (auto it = prim_range.begin(); it!=prim_range.end(); ++it) {
 | prim path | `prim.GetPath()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#a205aff7879727aeaadd5cf8a3deda408) | Explicitly as C++ String `prim.GetPath().GetString()` |
 | prim name | `prim.GetName()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#a806237c0e1ef633b59aee8a42e83d2e2) | Explicitly as C++ String `prim.GetName().GetString()` |
 
+## Composition
+
+The idea of composition is one of the key parts of what makes USD so flexible. There are a few core ways to compose a USD stage.
+
 ### References
 
 USD References can either be prepended or appended. Combined with this, the reference's order in said list is used in stage composition.
 
- * https://graphics.pixar.com/usd/docs/USD-Glossary.html#USDGlossary-References
+ * (References)[https://graphics.pixar.com/usd/docs/USD-Glossary.html#USDGlossary-References]
 
 |  | Code | Docs | Tips |
 |:-- | -- | -- | -- |
 | Add Reference | `prim.GetReferences().AddReference("C:/file/on/disk.usd")` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_references.html#a890b5681714fae1c1f807a8b0f4ab67b) | Adds a reference to back of prepend list|
 | Add Reference *(specific)* | `prim.GetReferences().AddReference("C:/file/on/disk.usd", position = Usd.ListPositionFrontOfAppendList)` | [docs](https://graphics.pixar.com/usd/docs/api/common_8h.html#a28349701078995dc76a99331bb60c555a681727d9e5aecd6058825ab1fe888028) | Adds a reference to back of prepend list|
 | Get References | `prim.GetPrimStack()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_prim.html#a0d45421c0488ad9129873e1f8591bfaf) | There is no proper way *yet* to retrieve a list of references. This will return the composed stack, it is not recommended.  |
-
-
 
 ## Xformables
 
