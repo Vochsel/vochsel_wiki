@@ -28,9 +28,26 @@ Most of these are following are python snippets. The function interface is mostl
 ### Traversal
 
 To traverse recursively through every prim:
+
+**Python**
 ```python
 for prim in stage.Traverse():
     print(prim)
+```
+
+**C++**
+```c++
+for (pxr::UsdPrim prim: usd_stage->Traverse()) {
+    std::cout << "Prim path: " << prim.GetPath().GetText() << '\n';
+}
+```
+or
+```c++
+pxr::UsdPrimRange prim_range = usd_stage->Traverse();
+for (auto it = prim_range.begin(); it!=prim_range.end(); ++it) {
+    std::cout << "Found prim: " << it->GetPath().GetText() << '\n';
+    
+}
 ```
 
 ## Prims
@@ -42,6 +59,7 @@ for prim in stage.Traverse():
 | valid | `prim.IsValid()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#afa8720abaf6972d6dac22a8cd1a67225) | False if not valid (Doesn't exist) |
 | attribute | `prim.GetAttribute('attribName')` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_prim.html#a04dca40bb61be7b3779b1eb38002bca2) | Use `.Get()` and `.Set(val)` |
 | type *(string)* | `prim.GetTypeName()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_prim.html#a2e20db2f92fe5f6687b5c7f919277257) |  |
+| prim path | `prim.GetPath()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#a205aff7879727aeaadd5cf8a3deda408) |  |
 
 ## Xformables
 
