@@ -59,8 +59,8 @@ for (auto it = prim_range.begin(); it!=prim_range.end(); ++it) {
 | valid | `prim.IsValid()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#afa8720abaf6972d6dac22a8cd1a67225) | False if not valid (Doesn't exist) |
 | attribute | `prim.GetAttribute('attribName')` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_prim.html#a04dca40bb61be7b3779b1eb38002bca2) | Use `.Get()` and `.Set(val)` |
 | type *(string)* | `prim.GetTypeName()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_prim.html#a2e20db2f92fe5f6687b5c7f919277257) |  |
-| prim path | `prim.GetPath()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#a205aff7879727aeaadd5cf8a3deda408) | Explicitly as String `prim.GetPath().GetText()` |
-| prim name | `prim.GetName()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#a806237c0e1ef633b59aee8a42e83d2e2) | Explicitly as String `prim.GetName().GetText()` |
+| prim path | `prim.GetPath()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#a205aff7879727aeaadd5cf8a3deda408) | Explicitly as C++ String `prim.GetPath().GetString()` |
+| prim name | `prim.GetName()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#a806237c0e1ef633b59aee8a42e83d2e2) | Explicitly as C++ String `prim.GetName().GetString()` |
 
 ### References
 
