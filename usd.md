@@ -7,6 +7,11 @@ Most of these are following are python snippets. The function interface is mostl
  * Wrap values with `pxr::VtValue(10.0f)`
  * Paths with `pxr::SdfPath("/path")`
 
+### Resources
+
+ * [USD Glossary](https://graphics.pixar.com/usd/docs/USD-Glossary.html)
+ * [USD API Documentation](https://graphics.pixar.com/usd/docs/api/index.html)
+ * [cgwiki](http://www.tokeru.com/cgwiki/index.php?title=HoudiniLops)
 
 ## Stage 
 
@@ -65,6 +70,8 @@ for (auto it = prim_range.begin(); it!=prim_range.end(); ++it) {
 ### References
 
 USD References can either be prepended or appended. Combined with this, the reference's order in said list is used in stage composition.
+
+ * https://graphics.pixar.com/usd/docs/USD-Glossary.html#USDGlossary-References
 
 |  | Code | Docs | Tips |
 |:-- | -- | -- | -- |
