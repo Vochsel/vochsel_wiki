@@ -4,13 +4,14 @@ I've been using Pixar's USD in a CG pipeline for over a year now. Here's some he
 ### C++/Python
 Most of these are following are python snippets. The function interface is mostly the same with the C++ API with some noticeable language differences: 
 
- * Wrap values with `pxr::VtValue(10.0f)`
+ * Wrap values with `pxr::VtValue(10.0f)` `pxr::VtValue("Value")`
  * Paths with `pxr::SdfPath("/path")`
 
 ### Resources
 
  * [USD Glossary](https://graphics.pixar.com/usd/docs/USD-Glossary.html)
  * [USD API Documentation](https://graphics.pixar.com/usd/docs/api/index.html)
+ * [Pixar's Presentations](http://graphics.pixar.com/usd/downloads.html)
  * [cgwiki](http://www.tokeru.com/cgwiki/index.php?title=HoudiniLops)
 
 ## Stage 
