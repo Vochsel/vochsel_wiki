@@ -68,6 +68,12 @@ for (auto it = prim_range.begin(); it!=prim_range.end(); ++it) {
 | prim path | `prim.GetPath()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#a205aff7879727aeaadd5cf8a3deda408) | Explicitly as C++ String `prim.GetPath().GetString()` |
 | prim name | `prim.GetName()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#a806237c0e1ef633b59aee8a42e83d2e2) | Explicitly as C++ String `prim.GetName().GetString()` |
 
+## Attributes
+
+|  | Code | Docs | Tips |
+|:-- | -- | -- | -- |
+| is time varying | `attribute.ValueMightBeTimeVarying()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_attribute.html#ac059ed4db262b51c18a6c0c28b2fab3f) | Return true if value *might* change. If false, it's __certain__ that this value remains constant. |
+
 ## Composition
 
 The idea of composition is one of the key parts of what makes USD so flexible. There are a few core ways to compose a USD stage.
