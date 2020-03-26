@@ -10,6 +10,32 @@ To call this function from a parameter callback script you can use `hou.pwd().hm
 
 ## LOPS
 
+### Primitive selection
+
+The primitive field on lop nodes act like SOPs groups. You can selectively filter what this node will effect.
+
+Spaces separate primitive paths.
+
+These can be set via dropdown in any Primitive field on any node. Put here for convinience:
+
+All Meshes: `` `lopinputprims('.', 0)\` { usd_istype(0, @primpath, "Mesh") }``
+
+All Components: `{ usd_kind(0, @primpath) == "component" }`
+
+For more info: [Houdini Docs: Primitive Matching Patterns](https://www.sidefx.com/docs/houdini/solaris/pattern.html)
+
+### Set subdiv attribute
+
+In an attribute wrangle set the string attribute `@subdivisionScheme` to be a token of your choice: `catmullClark`, `loop`, `bilinear`, `none`.
+
+```c
+s@subdivisionScheme = "catmullClark";
+s@subdivisionScheme = "loop";
+s@subdivisionScheme = "bilinear";
+```
+
+![lops subdiv attribute](https://github.com/Vochsel/vochsel_wiki/blob/master/houdini/lops_subdiv_wrangle.png)
+
 ### LOP Lights -> Mantra/OBJ Lights
 
 This script is a barebones conversion of a USD Stage to Mantra/OBJ level lights. There's bugs, it doesn't work on all cases, but might be of interest.
