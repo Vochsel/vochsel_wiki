@@ -34,7 +34,7 @@ s@subdivisionScheme = "loop";
 s@subdivisionScheme = "bilinear";
 ```
 
-![lops subdiv attribute](https://github.com/Vochsel/vochsel_wiki/blob/master/houdini/lops_subdiv_wrangle.png)
+![lops subdiv attribute](https://github.com/Vochsel/vochsel_wiki/raw/master/houdini/lops_subdiv_wrangle.png)
 
 ### LOP Lights -> Mantra/OBJ Lights
 
