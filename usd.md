@@ -68,6 +68,24 @@ for (auto it = prim_range.begin(); it!=prim_range.end(); ++it) {
 | prim path | `prim.GetPath()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#a205aff7879727aeaadd5cf8a3deda408) | Explicitly as C++ String `prim.GetPath().GetString()` |
 | prim name | `prim.GetName()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#a806237c0e1ef633b59aee8a42e83d2e2) | Explicitly as C++ String `prim.GetName().GetString()` |
 
+## Tokens
+USD Tokens are a handle for a registered string. Basically all strings must be tokens. In python these are usually converted automagically.
+
+### Sanitize String
+
+In order to "sanitize" a string to be a valid usd token you can use this function: [docs](https://graphics.pixar.com/usd/docs/api/group__group__tf___string.html#ga68e587cc7f9f5a5dd3ae8f03dcffe15c)
+
+**Python**
+```python
+from pxr import Tf
+token = Tf.MakeValidIdentifier("some.illegal/string") 
+```
+
+**C++**
+```c++
+TfToken token = TfMakeValidIdentifier("some.illegal/string");
+``` 
+
 ## Attributes
 
 |  | Code | Docs | Tips |
