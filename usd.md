@@ -88,8 +88,18 @@ TfToken token = TfMakeValidIdentifier("some.illegal/string");
 
 ## Attributes
 
+Note:
+Value Types for C++: `pxr::SdfValueTypeNames->String`
+Value Types for Python: `Sdf.ValueTypeNames.String`
+
+For userProperties, append `userProperties:` to attribute name. 
+
 |  | Code | Docs | Tips |
 |:-- | -- | -- | -- |
+| create attribute | `prim.CreateAttribute(name, Sdf.ValueTypeNames.Int, isCustom)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_prim.html#a1e25b831b0e54e1d59ba2da969e165fa) | |
+| get attribute | `prim.GetAttribute(name)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_prim.html#a04dca40bb61be7b3779b1eb38002bca2) | |
+| set attribute (value) | `attribute.Set()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_attribute.html#a5a6164f78a12163010be1b6c3a25187d) | In C++ you need to use the specific template `Set<float>(0.5f)` |
+| get attribute (value) | `attribute.Get()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_attribute.html#adf3eaec3c3d8749ceb86236dcc3d1e9d) | In C++ you need to use a template `Get<float>()` |
 | is time varying | `attribute.ValueMightBeTimeVarying()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_attribute.html#ac059ed4db262b51c18a6c0c28b2fab3f) | Return true if value *might* change. If false, it's __certain__ that this value remains constant. |
 
 ## Composition
