@@ -61,7 +61,7 @@ for (auto it = prim_range.begin(); it!=prim_range.end(); ++it) {
 |  | Code | Docs | Tips |
 |:-- | -- | -- | -- |
 | define | `stage.DefinePrim("/primpath")` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_stage.html#a6151ae804f7145e451d9aafdde347730) | Gets or creates prim at primpath. To transform, prim must be an xform (or sub type) |
-| exists | `stage.GetPrimAtPath("/primpath")` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_stage.html#a6151ae804f7145e451d9aafdde347730) | Return prim object. Can be invalid (Check with IsValid) |
+| exists | `stage.GetPrimAtPath("/primpath")` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_stage.html#a5f2d63fdf3b9bb6ac9e3286b70c07551) | Return prim object. Can be invalid (Check with IsValid) |
 | valid | `prim.IsValid()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_object.html#afa8720abaf6972d6dac22a8cd1a67225) | False if not valid (Doesn't exist) |
 | attribute | `prim.GetAttribute('attribName')` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_prim.html#a04dca40bb61be7b3779b1eb38002bca2) | Use `.Get()` and `.Set(val)` |
 | type *(string)* | `prim.GetTypeName()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_prim.html#a2e20db2f92fe5f6687b5c7f919277257) |  |
