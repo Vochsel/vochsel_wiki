@@ -33,6 +33,8 @@ Most of these are following are python snippets. The function interface is mostl
 
 ### Traversal
 
+#### Stage
+
 To traverse recursively through every prim:
 
 **Python**
@@ -55,6 +57,15 @@ for (auto it = prim_range.begin(); it!=prim_range.end(); ++it) {
     
 }
 ```
+
+#### Children
+**C++**
+```c++
+for (const pxr::UsdPrim &childPrim : prim.GetChildren()) {
+    // Do something...
+}
+```
+
 
 ## Prims
 
