@@ -66,6 +66,16 @@ for (const pxr::UsdPrim &childPrim : prim.GetChildren()) {
 }
 ```
 
+## Layers
+Layers are core part of USD composition. A usd file can have "SubLayers". A Stage can have multiple "Layers". Both "In Memory Layers" and "On Disk Layers".
+
+There is not as nice of an API for layers, and it actaully differs whether in Python or C++. (Link)[https://groups.google.com/g/usd-interest/c/usUeP1USk04/m/ENTOmMsBBwAJ]
+
+|  | Code | Docs | Tips |
+|:-- | -- | -- | -- |
+| add sublayer | `stage.GetRootLayer().subLayerPaths.append(usd_file)` | (python) |
+| get layer stack | `stage.GetLayerStack()` | (python) |
+
 
 ## Prims
 
