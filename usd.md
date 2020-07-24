@@ -181,5 +181,16 @@ USD References can either be prepended or appended. Combined with this, the refe
 | set dome texture | `dome_light.CreateTextureFileAttr().Set("/path/to/texture.exr")` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_lux_dome_light.html#a5e1d4f7d42a3bb4957388b2762675aca) |  |
 
 
+## Shaders
+
+`from pxr import UsdShade`
+
+|  | Code | Docs | Tips |
+|:-- | -- | -- | -- |
+| get shader from prim | `shader = UsdShade.Shader(prim)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_shade_shader.html#ad5583e305b62de9e6a2c18302b7d9004) | This will return a shader object |
+| get filename | `shader.GetInput("filename").Get()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_shade_shader.html#a7fa41d67d5a7ca13ae5a544a5ce291d7) | Gets the texture filename string (Has '@' at start and end.  |
+| set existing filename | `shader.GetInput("filename").Set("C:/new_path.png")` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_shade_shader.html#a7fa41d67d5a7ca13ae5a544a5ce291d7) | |
+
+
 ## Tips
  * Most API functions are CamelCase.
