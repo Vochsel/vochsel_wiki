@@ -37,6 +37,22 @@ s@subdivisionScheme = "bilinear";
 
 ![lops subdiv attribute](https://github.com/Vochsel/vochsel_wiki/raw/master/houdini/lops_subdiv_wrangle.png)
 
+### GeomSubsets
+
+USD uses [USDGeomSubsets](https://graphics.pixar.com/usd/docs/api/class_usd_geom_subset.html) to allow for multiple materials assigned to one mesh. These work well. But additional care should be taken when modifying LOPs via SOPs. When going back and forth between LOPs and SOPs, an important mesh attribute to keep an eye on is `subsetFamily:materialBind:familyType`. If this is set to `nonOverlapping` then the additional geometry from SOPs will not properly interpolate or set the GeomSubsets. 
+
+One fix is to set your mesh attribute to `s@subsetFamily:materialBind:familyType = "unrestricted";` via an Attribute Wrangle in LOPs. 
+
+Another fix is to create groups for the geom subsets.Add a primitive wrangle in SOPs after unpacking polys from USD. Add the following VEX to the prim wrangle.
+
+```c
+string s@materialBind;
+setprimgroup(0, s, @primnum, 1);
+```
+
+And then enable **Subset Groups**, under **Import Data**, in LOPs, and set the groups to either `*` or the specific groups created per subface.
+
+
 ### LOP Lights -> Mantra/OBJ Lights
 
 This script is a barebones conversion of a USD Stage to Mantra/OBJ level lights. There's bugs, it doesn't work on all cases, but might be of interest.
