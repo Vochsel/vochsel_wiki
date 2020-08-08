@@ -23,6 +23,14 @@ Most of these are following are python snippets. The function interface is mostl
 | memory | `stage = Usd.Stage.CreateInMemory()` |
 | file | `stage = Usd.Stage.CreateNew("/path/to/stage.usda")` |
 
+### Metadata
+
+|  | Code |
+|:-- | -- |
+| comment | `stage.SetMetadata('comment', 'This will be the comment')` |
+| documentation | `stage.SetMetadata('documentation', 'This will be the documentation')` |
+| documentation | `stage.GetPseduoRoot().SetDocumentation('This will be the documentation")` |
+
 ### Output
 
 |  | Code | Docs |
