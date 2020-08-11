@@ -4,6 +4,7 @@ Here are a mix of Python and Vex snippets that have served me well.
 ## Python
 
 Layout node: `node.moveToGoodPosition()`
+
 Flags:
 * `node.setDisplayFlag(True)`
 * `node.setRenderFlag(True)`
