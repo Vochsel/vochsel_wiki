@@ -60,6 +60,16 @@ This script is a barebones conversion of a USD Stage to Mantra/OBJ level lights.
 Source:
 [houdini/lop_import_lights.py](houdini/lop_import_lights.py)
 
+## C++
+
+### HBoost
+
+When linking against HBoost, you need to ensure these three steps:
+
+1. Change references to the boost namespace to `hboost` instead.
+2. Change references to `BOOST_*` preprocessor variables to `HBOOST_*` instead. (This one got me)
+3. Change `<boost/...>` header includes to `<hboost/...>` instad.
+
 ## External Links
  * [kiryha python-snippets](https://github.com/kiryha/Houdini/wiki/python-snippets)
 
