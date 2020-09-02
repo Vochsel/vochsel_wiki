@@ -45,6 +45,31 @@ s@subdivisionScheme = "bilinear";
 
 ![lops subdiv attribute](https://github.com/Vochsel/vochsel_wiki/raw/master/houdini/lops_subdiv_wrangle.png)
 
+### Bulk override attributes
+
+This will change all filename attributes from backslashes to forward, but can be adjusted to suit your needs.
+
+```python
+node = hou.pwd()
+stage = node.editableStage()
+# Add code to modify the stage.
+# Use drop down menu to select examples.
+import os
+from pxr import UsdShade
+for prim in stage.Traverse():
+    try:
+        s = UsdShade.Shader(prim)
+        i = s.GetInput("filename")
+        p = i.Get()
+        if p:
+            p = str(p)
+            p = p[1:-1]
+            p = p.replace('\\\\', '/')
+            i.Set(p)
+    except:
+        pass
+```
+
 ### GeomSubsets
 
 USD uses [USDGeomSubsets](https://graphics.pixar.com/usd/docs/api/class_usd_geom_subset.html) to allow for multiple materials assigned to one mesh. These work well. But additional care should be taken when modifying LOPs via SOPs. When going back and forth between LOPs and SOPs, an important mesh attribute to keep an eye on is `subsetFamily:materialBind:familyType`. If this is set to `nonOverlapping` then the additional geometry from SOPs will not properly interpolate or set the GeomSubsets. 
