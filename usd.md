@@ -202,3 +202,16 @@ USD References can either be prepended or appended. Combined with this, the refe
 
 ## Tips
  * Most API functions are CamelCase.
+
+## USDZip Gotchas
+
+These are somethings that got me when working with USDZips, particularly on iOS quicklook.
+
+* If there are multiple root prims and no default prim, iOS quicklook freaks out. Add a defaultPrim to the stage
+* "File size is too large" I've found usdzips work best when small. 
+     * Beware large textures. The usdzip can be small but the texture budget could be 100x as much...
+ * If a texture path has an invalid path it can bundle in empty 1kb files with no extension
+     * Too many (Any?) of these can sometimes cause quicklook to not display it at all
+ * Scene size is important, as is the sceneUnits layer property
+
+     
