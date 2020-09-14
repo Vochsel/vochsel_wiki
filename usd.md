@@ -213,5 +213,6 @@ These are somethings that got me when working with USDZips, particularly on iOS 
  * If a texture path has an invalid path it can bundle in empty 1kb files with no extension
      * Too many (Any?) of these can sometimes cause quicklook to not display it at all
  * Scene size is important, as is the sceneUnits layer property
+ * USD Apple Schemas: https://developer.apple.com/documentation/arkit/usdz_schemas_for_ar
 
      
