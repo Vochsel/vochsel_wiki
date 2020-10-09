@@ -79,7 +79,7 @@ One fix is to set your mesh attribute to `s@subsetFamily:materialBind:familyType
 Another fix is to create groups for the geom subsets.Add a primitive wrangle in SOPs after unpacking polys from USD. Add the following VEX to the prim wrangle.
 
 ```c
-string s@materialBind;
+string s = s@materialBind;
 setprimgroup(0, s, @primnum, 1);
 ```
 
