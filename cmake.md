@@ -14,6 +14,16 @@ _Note: It's important that this environment variable exists..._
 
 [Source](https://stackoverflow.com/questions/28070810/cmake-generate-error-on-windows-as-it-uses-as-escape-seq)
 
+## Lists
+
+### Filter 
+
+If you have a cmake list you can filter it to only contain a certain file type by using the following:
+
+`list(FILTER LIST_VAR INCLUDE REGEX ".*h$")`
+
+That will only keep header files. The regex is a weird format but necessary.
+
 ## Debugging 
 
 ### Log Verbosity
