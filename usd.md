@@ -30,6 +30,9 @@ Most of these are following are python snippets. The function interface is mostl
 | comment | `stage.SetMetadata('comment', 'This will be the comment')` |
 | documentation | `stage.SetMetadata('documentation', 'This will be the documentation')` |
 | documentation | `stage.GetPseduoRoot().SetDocumentation('This will be the documentation")` |
+| renderSettingsPrimPath | `stage.SetMetadata('renderSettingsPrimPath', '/RenderSettings/Prim')` |
+
+Interesting note is that there is no current API to set render settings prim path except explicitly via token...
 
 ### Output
 
