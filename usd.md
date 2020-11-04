@@ -162,7 +162,7 @@ USD References can either be prepended or appended. Combined with this, the refe
 | set rotation *(euler)* | `UsdGeom.XformCommonAPI(xform).SetRotate(Gf.Vec3d(x, y, z), timecode)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xform_common_a_p_i.html#aa1cfa6eb3f9ccf760536e7bf14b60462) | Degrees |
 | set rotation *(quaternion)* | `UsdGeom.XformCommonAPI(xform).SetRotate(Gf.Rotation(Gf.Vec3d(x, y, z), w), timecode)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xform_common_a_p_i.html#aa1cfa6eb3f9ccf760536e7bf14b60462) |  |
 | get transform *(local)* | `UsdGeom.XformCommonAPI(xform).GetXformVectors(timecode)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xform_common_a_p_i.html#a9901c2a6ffcdc8c4e7aa4ec07d5efa00) | Returns tuple of (translation, rotation, scale, pivot, rotationOrder) |
-| get transform *(world)* | `mat4 = UsdGeom.XformCache(timecode).GetLocalToWorldTransform(prim)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xformable.html#a2aa0db10d36cae3d325e930765e54d94) | Returns matrix 4x4 |
+| get transform *(world)* | `mat4 = UsdGeom.XformCache(timecode).GetLocalToWorldTransform(prim)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xform_cache.html#aaba1e27b19713a49c1b5b77805184113) | Returns matrix 4x4 |
 | set transform | `xform.AddTransformOp().Set(transform_matrix)` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_geom_xform_common_a_p_i.html#a9901c2a6ffcdc8c4e7aa4ec07d5efa00) | Returns tuple of (translation, rotation, scale, pivot, rotationOrder) |
 
 
