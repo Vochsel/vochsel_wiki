@@ -19,6 +19,18 @@ To call this function from a parameter callback script you can use `hou.pwd().hm
 
 ## LOPS
 
+### Husk
+
+Houdini's build of USD allows headless farm rendering without consuming a Houdini license. This is great as a stopgap until USD properly allows headless rendering via `usdrecord`.
+
+#### EXR Metadata
+
+EXR Metadata can be injected via UsdRenderProduct variables, or via a Hydra Delegate's GetRenderStats VtDictionary callback. Husk encodes a fair amount of data automatically like render time, Houdini version, initiating command, etc.
+
+ * https://graphics.pixar.com/usd/docs/api/class_usd_render_product.html
+ * https://www.sidefx.com/docs/hdk/_h_d_k__u_s_d_hydra.html#HDK_USDHydraHuskMetadata
+ * https://www.sidefx.com/forum/topic/75992/
+
 ### Primitive selection
 
 The primitive field on lop nodes act like SOPs groups. You can selectively filter what this node will effect.
