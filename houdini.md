@@ -11,6 +11,10 @@ Flags:
 
 ## HDAs/OTLs
 
+### How do I specify the context when double clicked?
+
+Under the Node tab in HDA Operator Type Properties, you can specify a Dive Target. You'll want to choose a relative path to the node you want users to jump to when double clicked. Nifty! 
+
 ### Internal Callback Function
 When writing HDAs you can put your python code under Scripts tab, and then create a `Python Module` event handler.
 To call this function from a parameter callback script you can use `hou.pwd().hm().function_name(kwargs, hou.pwd())`. 
