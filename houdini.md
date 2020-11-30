@@ -13,7 +13,12 @@ Flags:
 
 ### How do I specify the context when double clicked?
 
-Under the Node tab in HDA Operator Type Properties, you can specify a Dive Target. You'll want to choose a relative path to the node you want users to jump to when double clicked. Nifty! 
+Under the Node tab in the HDA Operator Type Properties, you can specify a Dive Target. You'll want to choose a relative path to the node you want users to jump to when double clicked. Nifty! 
+
+### How do I specify a node/subnetwork of a HDA to be editable?
+
+Under the Node tab in the HDA Operator Type Properties, you can specify one or more editable nodes. (Make sure it's path is relative) (This works great with the previous tip!)
+
 
 ### Internal Callback Function
 When writing HDAs you can put your python code under Scripts tab, and then create a `Python Module` event handler.
