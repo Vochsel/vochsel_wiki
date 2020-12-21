@@ -116,6 +116,19 @@ Source:
 
 ## TOPs
 
+### Access PyObject attribute variables
+
+Contrary to initial logic, pyobject variables is done through a `.` operator. It also works fine if normally illegal variable tokens are in the variable name. E.g.
+
+A PyObject attribute named `test_data` containing:
+```python
+{
+    'test:illegal': 'renderer'
+}
+```
+
+Can be accessed as such in a regular Houdini parm `@test_data.test:illegal` just fine... Whodathunk...
+
 ### Get EXR Metadata from TOPs USD Render
 
 Drop down a cop2net, a file node, point it to exr (@pdg_input). And then with a python script top node
