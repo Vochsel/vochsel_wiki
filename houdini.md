@@ -114,6 +114,21 @@ This script is a barebones conversion of a USD Stage to Mantra/OBJ level lights.
 Source:
 [houdini/lop_import_lights.py](houdini/lop_import_lights.py)
 
+## TOPs
+
+### Get EXR Metadata from TOPs USD Render
+
+Drop down a cop2net, a file node, point it to exr (@pdg_input). And then with a python script top node
+
+```python
+import hou
+import json
+
+n = hou.node('/node/path')
+render_stats = n.getMetaDataString('attributes')
+stat_obj = json.loads(render_stats)
+```
+
 ## C++
 
 ### HBoost
