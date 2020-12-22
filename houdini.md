@@ -142,6 +142,33 @@ render_stats = n.getMetaDataString('attributes')
 stat_obj = json.loads(render_stats)
 ```
 
+*Update: It's actually a fair bit more annoying than this.*
+
+Because no ROP Fetch node is used, the pdg attributes don't seem to be evaluated properly. Maybe there is a python function for this? Unsure at the moment. Currently the solution is to create a file cop node, set path, get attributes, delete cop node... Not ideal.
+
+```python
+import hou
+import json
+
+# Create temp node
+network = hou.node('/obj/topnet1/exr_gather')
+cop_node = network.createNode("file", "test")
+
+# Evaluate filepath and set on node
+evaluated_filepath = work_item.inputResultData[0].localizePath(self.scheduler)
+cop_node.parm("filename1").set(evaluated_filepath)
+
+# Get attributes metadata
+exr_metadata_string = cNode.getMetaDataString("attributes")
+exr_metadata = json.loads(exr_metadata_string)
+
+# Set PyObject on workite,
+work_item.setPyObjectAttrib("exr_metadata", exr_metadata)
+
+# Cleanup temp node
+cop_node.destroy()
+```
+
 ## C++
 
 ### HBoost
