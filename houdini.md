@@ -129,6 +129,20 @@ A PyObject attribute named `test_data` containing:
 
 Can be accessed as such in a regular Houdini parm `@test_data.test:illegal` just fine... Whodathunk...
 
+### Get workitem log / Get ROP Fetch "Job Details" attribute
+
+When running a ROP Fetch in TOPs, sometimes you might want the renderer log. An inspection on the work_item shows a mysterious attribute "Job Details" with a path to the log. `@pdg_log` does exist, but is the file URI to access, not the direct filepath. Here's a snippet to solve this.
+
+```python
+import os
+from urllib.parse import urlparse
+
+log_uri = self.scheduler.getLogURI(parent_item)
+
+log_uri = os.path.abspath(urlparse(log_uri).path[1:])
+work_item.setStringAttrib("log_uri", log_uri)
+```
+
 ### Get EXR Metadata from TOPs USD Render
 
 Drop down a cop2net, a file node, point it to exr (@pdg_input). And then with a python script top node
