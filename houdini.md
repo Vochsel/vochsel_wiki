@@ -114,6 +114,11 @@ This script is a barebones conversion of a USD Stage to Mantra/OBJ level lights.
 Source:
 [houdini/lop_import_lights.py](houdini/lop_import_lights.py)
 
+### Match Size / Fit to 1:1 box
+
+Source:
+[usd/match_size.py](usd/match_size.py)
+
 ## TOPs
 
 ### Access PyObject attribute variables
