@@ -206,6 +206,13 @@ USD References can either be prepended or appended. Combined with this, the refe
 ## Tips
  * Most API functions are CamelCase.
 
+## Utils
+
+### Match Size / Fit to 1:1 box
+
+Source:
+[usd/match_size.py](usd/match_size.py)
+
 ## USDZip Gotchas
 
 These are somethings that got me when working with USDZips, particularly on iOS quicklook.
