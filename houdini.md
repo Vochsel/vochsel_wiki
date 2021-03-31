@@ -123,7 +123,7 @@ Source:
 
 ### Access PyObject attribute variables
 
-Contrary to initial logic, pyobject variables is done through a `.` operator. It also works fine if normally illegal variable tokens are in the variable name. E.g.
+Contrary to initial logic, pyobject variables are accessed through a `.` operator. It also works fine if normally illegal variable tokens are in the variable name. E.g.
 
 A PyObject attribute named `test_data` containing:
 ```python
@@ -133,6 +133,14 @@ A PyObject attribute named `test_data` containing:
 ```
 
 Can be accessed as such in a regular Houdini parm `@test_data.test:illegal` just fine... Whodathunk...
+
+### Python Script set @pdg_output
+
+You can add output result via `work_item.addResultData("C:/path/to/output.png","file/image", 0)`.
+
+You can also clear results: `work_item.clearResultData()`.
+
+And override results `work_item.updateResultData(0, "C:/path/to/output.png","file/image", 0)`.
 
 ### Get workitem log / Get ROP Fetch "Job Details" attribute
 
