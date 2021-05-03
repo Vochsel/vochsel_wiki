@@ -121,6 +121,24 @@ Source:
 
 ## TOPs
 
+### Running TOPs via hython
+
+Basic setup:
+
+```python
+# Set parms etc
+hou.parm('/obj/sopnet1/extrude1/offset').set(100)
+
+hou.hipFile.save() # This is very very important...
+
+tops_node = hou.node('/path/to/topnode')
+tops_node.dirtyAllTasks(True)
+tops_node.executeGraph(True, block=True)
+
+# Magic...
+
+```
+
 ### Access PyObject attribute variables
 
 Contrary to initial logic, pyobject variables are accessed through a `.` operator. It also works fine if normally illegal variable tokens are in the variable name. E.g.
