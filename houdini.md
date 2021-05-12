@@ -152,6 +152,17 @@ A PyObject attribute named `test_data` containing:
 
 Can be accessed as such in a regular Houdini parm `@test_data.test:illegal` just fine... Whodathunk...
 
+### Evaluate external parms through Python Script TOP node
+
+Want to eval an external parm per work item? You can with this! 
+
+```python
+with work_item.makeActive():
+    print(top_node.parm('pdg_command').eval())
+```
+
+https://www.sidefx.com/forum/topic/73862/#post-312313
+
 ### Python Script set @pdg_output
 
 You can add output result via `work_item.addResultData("C:/path/to/output.png","file/image", 0)`.
