@@ -121,6 +121,13 @@ Source:
 
 ## TOPs
 
+### Top Tops Tips
+
+* Plan your network out with nulls **first** (Kinda like psuedo programming)
+* Use attribs in a consistent way
+* Attributes should be created so that if you rewire your graph, nothing breaks
+* Beware of wait-for-all with multiple starting work items (use a partition by index instead)
+
 ### Running TOPs via hython
 
 Basic setup:
