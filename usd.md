@@ -225,4 +225,10 @@ These are somethings that got me when working with USDZips, particularly on iOS 
  * Scene size is important, as is the sceneUnits layer property
  * USD Apple Schemas: https://developer.apple.com/documentation/arkit/usdz_schemas_for_ar
 
-     
+## Apple Quicklook
+
+There are some hidden URL parameters when linking to usdz from the web
+
+ * #allowsContentScaling=0 stops use scaling (https://developer.apple.com/forums/thread/124558)
+ * Call to action: https://developer.apple.com/documentation/arkit/adding_an_apple_pay_button_or_a_custom_action_in_ar_quick_look
+
