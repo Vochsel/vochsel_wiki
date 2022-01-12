@@ -203,6 +203,16 @@ USD References can either be prepended or appended. Combined with this, the refe
 | get filename | `shader.GetInput("filename").Get()` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_shade_shader.html#a7fa41d67d5a7ca13ae5a544a5ce291d7) | Gets the texture filename string (Has '@' at start and end.  |
 | set existing filename | `shader.GetInput("filename").Set("C:/new_path.png")` | [docs](https://graphics.pixar.com/usd/docs/api/class_usd_shade_shader.html#a7fa41d67d5a7ca13ae5a544a5ce291d7) | |
 
+## USDZip
+
+Sometimes you may need to zip a usd scene to a .usdz without running the provided usdzip command line tool. Turns out this is easy.
+
+```
+from pxr import Sdf, UsdUtils
+UsdUtils.CreateNewARKitUsdzPackage(Sdf.AssetPath(usd_path), usdzip_path)
+# or 
+UsdUtils.CreateNewUsdzPackage(Sdf.AssetPath(usd_path), usdzip_path)
+```
 
 ## Tips
  * Most API functions are CamelCase.
