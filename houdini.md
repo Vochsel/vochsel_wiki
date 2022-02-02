@@ -1,6 +1,16 @@
 # Houdini Wiki
 Here are a mix of Python and Vex snippets that have served me well.
 
+## HScript
+
+If there are pythonic ways to do this, feel free to correct me! 
+
+### Refresh GL textures 
+
+Manually: Render -> Refresh Textures
+
+HScript: `glcache -c` [docs](https://www.sidefx.com/docs/houdini/commands/glcache.html)
+
 ## Python
 
 Layout node: `node.moveToGoodPosition()`
