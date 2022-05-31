@@ -126,6 +126,13 @@ Source:
 
 ### Match Size / Fit to 1:1 box
 
+In a LOP wrangle
+```c
+vector _s = usd_getbbox_size(0, s@primpath, "default");
+float _ms = max(_s);
+usd_addscale(0, s@primpath, "unify", 1.0/_ms);
+```
+
 Source:
 [usd/match_size.py](usd/match_size.py)
 
