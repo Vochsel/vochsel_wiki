@@ -46,9 +46,16 @@ Houdini's build of USD allows headless farm rendering without consuming a Houdin
 
 EXR Metadata can be injected via UsdRenderProduct variables, or via a Hydra Delegate's GetRenderStats VtDictionary callback. Husk encodes a fair amount of data automatically like render time, Houdini version, initiating command, etc.
 
+Be sure to use the format `driver:parameters:OpenEXR:NAME`. See below for discrepencies.
+
  * [Pixar Docs UsdRenderProduct](https://graphics.pixar.com/usd/docs/api/class_usd_render_product.html)
  * [Sidefx Wiki Husk Metadata](https://www.sidefx.com/docs/hdk/_h_d_k__u_s_d_hydra.html#HDK_USDHydraHuskMetadata)
  * [Sidefx Forum Related](https://www.sidefx.com/forum/topic/75992/)
+
+##### Format of USD Attribute Name
+Weirdly, using husk and Karma, `driver:parameters:husk:NAME` works to store metadata in the exr, but for RenderMan (and possibly other Hydra delegates) you need to use the format `driver:parameters:OpenEXR:NAME` (Capitalization of OpenEXR is important!).
+
+Found this nugget [here](https://www.sidefx.com/forum/topic/75992/#post-325063).
 
 ### Primitive selection
 
